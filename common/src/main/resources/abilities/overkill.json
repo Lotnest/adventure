@@ -1,0 +1,8 @@
+{
+  "id": "overkill",
+  "name": "&c&lOverkill",
+  "description": "&7Go on a rampage! Makes you faster and stronger by &e35%.",
+  "durationInSeconds": 25,
+  "cooldownInSeconds": 200,
+  "manaCost": 40
+}

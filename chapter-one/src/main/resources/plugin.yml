@@ -1,0 +1,6 @@
+main: dev.lotnest.adventure.chapter.one.ChapterOnePlugin
+name: "AdventureChapterOne"
+version: "${project.version}"
+api-version: 1.19
+authors: [ Lotnest ]
+description: "Adventure - Chapter One"

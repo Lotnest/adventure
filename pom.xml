@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>dev.lotnest.adventure</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>common</module>
+        <module>chapter-one</module>
+        <module>chapter-zero</module>
+    </modules>
+
+    <properties>
+        <java.version>17</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven.compiler.release>${java.version}</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <spigot.version>1.19.4-R0.1-SNAPSHOT</spigot.version>
+        <acf.version>0.5.1-SNAPSHOT</acf.version>
+        <glowingentities.version>1.2.1</glowingentities.version>
+        <adventure.platform.bukkit.version>4.3.0</adventure.platform.bukkit.version>
+
+        <lombok.version>1.18.20</lombok.version>
+        <jetbrains.annotations.version>24.0.1</jetbrains.annotations.version>
+        <commons.lang3.version>3.12.0</commons.lang3.version>
+        <slf4j.version>2.0.7</slf4j.version>
+        <log4j.version>2.20.0</log4j.version>
+        <google.guava.version>31.1-jre</google.guava.version>
+
+        <junit.jupiter.version>5.9.2</junit.jupiter.version>
+        <mockito.version>5.2.0</mockito.version>
+        <assertj.version>3.24.2</assertj.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>aikar</id>
+            <url>https://repo.aikar.co/content/groups/aikar/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot</artifactId>
+            <version>${spigot.version}</version>
+            <classifier>remapped-mojang</classifier>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>co.aikar</groupId>
+            <artifactId>acf-paper</artifactId>
+            <version>${acf.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.skytasul</groupId>
+            <artifactId>glowingentities</artifactId>
+            <version>${glowingentities.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.kyori</groupId>
+            <artifactId>adventure-platform-bukkit</artifactId>
+            <version>${adventure.platform.bukkit.version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>${jetbrains.annotations.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons.lang3.version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${google.guava.version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>Adventure-${project.name}-${project.version}</finalName>
+        <defaultGoal>clean install</defaultGoal>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.11.0</version>
+                    <configuration>
+                        <release>${java.version}</release>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <annotationProcessorPaths>
+                            <path>
+                                <groupId>org.projectlombok</groupId>
+                                <artifactId>lombok</artifactId>
+                                <version>${lombok.version}</version>
+                            </path>
+                        </annotationProcessorPaths>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-shade-plugin</artifactId>
+                    <version>3.4.1</version>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>shade</goal>
+                            </goals>
+                            <configuration>
+                                <createDependencyReducedPom>false</createDependencyReducedPom>
+                                <outputFile>${project.build.directory}/${project.build.finalName}-final.jar
+                                </outputFile>
+                                <relocations>
+                                    <relocation>
+                                        <pattern>co.aikar.commands</pattern>
+                                        <shadedPattern>dev.lotnest.adventure.common.acf.commands</shadedPattern>
+                                    </relocation>
+                                    <relocation>
+                                        <pattern>co.aikar.locales</pattern>
+                                        <shadedPattern>dev.lotnest.adventure.common.acf.locales</shadedPattern>
+                                    </relocation>
+                                </relocations>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>net.md-5</groupId>
+                    <artifactId>specialsource-maven-plugin</artifactId>
+                    <version>1.2.4</version>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>remap</goal>
+                            </goals>
+                            <id>remap-obf</id>
+                            <configuration>
+                                <srgIn>org.spigotmc:minecraft-server:${spigot.version}:txt:maps-mojang</srgIn>
+                                <reverse>true</reverse>
+                                <remappedDependencies>org.spigotmc:spigot:${spigot.version}:jar:remapped-mojang
+                                </remappedDependencies>
+                                <remappedArtifactAttached>true</remappedArtifactAttached>
+                                <remappedClassifierName>remapped-obf</remappedClassifierName>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>remap</goal>
+                            </goals>
+                            <id>remap-spigot</id>
+                            <configuration>
+                                <inputFile>
+                                    ${project.build.directory}/${project.artifactId}-${project.version}-remapped-obf.jar
+                                </inputFile>
+                                <srgIn>org.spigotmc:minecraft-server:${spigot.version}:csrg:maps-spigot</srgIn>
+                                <remappedDependencies>org.spigotmc:spigot:${spigot.version}:jar:remapped-obf
+                                </remappedDependencies>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+
+</project>

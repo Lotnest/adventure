@@ -1,0 +1,6 @@
+main: dev.lotnest.adventure.chapter.zero.ChapterZeroPlugin
+name: "AdventureChapterZero"
+version: "${project.version}"
+api-version: 1.19
+authors: [ Lotnest ]
+description: "Adventure - Chapter Zero"

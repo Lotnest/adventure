@@ -1,0 +1,9 @@
+{
+  "id": "human",
+  "type": "HUMAN",
+  "summary": "One of the first races to inhabit the planet. Weak creatures with short lives, but clever and cunning. Their physical and mental abilities are mediocre.",
+  "strengths": "&7Good at melee, ranged and brewing.",
+  "weaknesses": "&7Weak magic, not good with heavy weapons.",
+  "kitId": "human",
+  "abilityHandlerClass": "dev.lotnest.adventure.common.character.ability.handler.OverkillAbilityHandler"
+}
