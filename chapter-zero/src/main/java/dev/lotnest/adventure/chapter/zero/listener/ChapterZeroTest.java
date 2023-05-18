@@ -1,7 +1,6 @@
 package dev.lotnest.adventure.chapter.zero.listener;
 
 import dev.lotnest.adventure.chapter.zero.ChapterZeroPlugin;
-import dev.lotnest.adventure.chapter.zero.cutscenes.episode.one.PrologueCutscene;
 import dev.lotnest.adventure.common.character.kit.Kits;
 import dev.lotnest.adventure.common.character.race.Race;
 import dev.lotnest.adventure.common.item.Items;
@@ -40,8 +39,6 @@ public class ChapterZeroTest implements Listener {
         }
 
         new AdventurePlayerTickTask(adventurePlayer).runTaskTimer(PLUGIN, 0L, 1L);
-
-        PLUGIN.getCutsceneManager().startCutscene(new PrologueCutscene(player, PLUGIN));
     }
 
     @EventHandler(priority = EventPriority.HIGHEST)

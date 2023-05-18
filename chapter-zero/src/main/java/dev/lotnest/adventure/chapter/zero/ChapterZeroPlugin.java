@@ -2,7 +2,6 @@ package dev.lotnest.adventure.chapter.zero;
 
 import dev.lotnest.adventure.chapter.zero.listener.ChapterZeroTest;
 import dev.lotnest.adventure.common.character.race.Race;
-import dev.lotnest.adventure.common.cutscene.CutsceneManager;
 import dev.lotnest.adventure.common.listener.ArrowHitRemover;
 import dev.lotnest.adventure.common.listener.BloodEffectHandler;
 import dev.lotnest.adventure.common.listener.HungerBlocker;
@@ -10,7 +9,6 @@ import dev.lotnest.adventure.common.listener.KitItemDropBlocker;
 import dev.lotnest.adventure.common.listener.MobDamageListener;
 import dev.lotnest.adventure.common.listener.MobOnDeathItemDropListener;
 import dev.lotnest.adventure.common.listener.PlayerArrowShootListener;
-import dev.lotnest.adventure.common.listener.PlayerMovementBlocker;
 import dev.lotnest.adventure.common.listener.PlayerSelfArrowDamageBlocker;
 import dev.lotnest.adventure.common.listener.gui.CharacterMenuHandler;
 import dev.lotnest.adventure.common.listener.gui.SettingsMenuHandler;
@@ -29,15 +27,11 @@ public final class ChapterZeroPlugin extends JavaPlugin {
 
     private static ChapterZeroPlugin instance;
 
-    private CutsceneManager cutsceneManager;
-
     private GlowingEntities glowingApi;
     private BukkitAudiences adventureApi;
 
     @Override
     public void onEnable() {
-        cutsceneManager = new CutsceneManager();
-
         glowingApi = new GlowingEntities(this);
         adventureApi = BukkitAudiences.create(this);
 
@@ -51,7 +45,6 @@ public final class ChapterZeroPlugin extends JavaPlugin {
         registerListener(new MobDamageListener());
         registerListener(new MobOnDeathItemDropListener());
         registerListener(new PlayerArrowShootListener(this));
-        registerListener(new PlayerMovementBlocker(cutsceneManager));
         registerListener(new BloodEffectHandler());
 
         registerListener(CharacterMenuHandler.INSTANCE);
